@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codex-commit"
+version = "0.1.0"
+description = "AI-powered conventional commit messages from OpenAI Codex"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "codex-commit contributors"}]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Version Control",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "openai>=1.0.0",
+    "click>=8.1.0",
+    "jinja2>=3.1.0",
+    "rich>=13.0.0",
+    "tomli>=2.0.0",
+]
+
+[project.urls]
+homepage = "https://github.com/<your-username>/codex-commit"
+repository = "https://github.com/<your-username>/codex-commit"
+
+[project.scripts]
+codex-commit = "codex_commit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["codex_commit*"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
